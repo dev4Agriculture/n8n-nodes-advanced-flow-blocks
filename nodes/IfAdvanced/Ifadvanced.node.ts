@@ -13,14 +13,13 @@ export class IfAdvanced implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'IFAdvanced',
 		name: 'ifadvanced',
-		icon: 'fa:map-signs',
+		icon: 'file:ifadvanced.svg',
 		group: ['transform'],
 		version: 1,
 		description:
 			'Route items to different branches (true/false) and an additional statistics branch',
 		defaults: {
-			name: 'IF',
-			color: '#408000',
+			name: 'IF'
 		},
 		inputs: ['main'],
 		// eslint-disable-next-line n8n-nodes-base/node-class-description-outputs-wrong

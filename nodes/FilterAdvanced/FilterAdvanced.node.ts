@@ -13,18 +13,17 @@ export class FilterAdvanced implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'FilterAdvanced',
 		name: 'filterAdvanced',
-		icon: 'fa:filter',
+		icon: 'file:FilterAdvanced.svg',
 		group: ['transform'],
 		version: 1,
 		description: 'Remove items matching a condition',
 		defaults: {
-			name: 'FilterAdvanced',
-			color: '#229eff',
+			name: 'FilterAdvanced'
 		},
 		inputs: ['main'],
 		// eslint-disable-next-line n8n-nodes-base/node-class-description-outputs-wrong
 		outputs: ['main','main','main'],
-		outputNames: ['Kept', 'Dropped', 'Statistics'],
+		outputNames: ['kept', 'dropped', 'statistics'],
 		properties: [
 			{
 				displayName: 'Conditions',
