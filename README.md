@@ -1,47 +1,102 @@
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
-# n8n-nodes-starter
+# n8n-advanced-flow-nodes
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
+This is an n8n community node. It lets you do some advanced flows. The n8n default provides different flow nodes to switch, if or filter data. These nodes come with 2 disadvantages:
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+1. There is no possibility to get statistics
+2. There is no possibility to check for any/none matches
 
-## Prerequisites
+These advanced flow nodes fix both these issues.
 
-You need the following installed on your development machine:
+[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 16. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-	```
-	npm install n8n -g
-	```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+[Installation](#installation)  
+[Operations](#operations)  
+[Compatibility](#compatibility)  
+[Usage](#usage)  <!-- delete if not using this section -->  
+[Resources](#resources)  
+
+## Installation
+
+Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+
+## Operations
+
+### If Advanced
+
+The If Advanced node equals the If Node of the default n8n package (as of version 1.20.0), but it provides an additional node exit to read statistics.
 
 
-## Using this starter
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+### Filter Advanced
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-    ```
-    git clone https://github.com/<your organization>/<your-repo-name>.git
-    ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+The Filter Advanced node equals the Filter Node of the default n8n package (as of version 1.20.0), but it provides an additional node exit to read statistics.
 
-## More information
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+### Any 
 
-## License
+The Any-Node can be used to check if there is any match within all entries. Other than the filter node or filter advanced node, the None-Exit is only filled, if there is no match at all. 
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+In case of any match you can decide if you want to receive all entries, just those that match the filter or just the first that matches the filter.
+
+
+## Compatibility
+
+This node was built for n8n version 1.20.0.
+
+## Usage
+
+### If Advanced
+
+The logic equals the one of the standard IF-Node; see [the official documentation](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.if/#branch-execution-with-if-and-merge-nodes).
+
+The _advanced_ part is the **Statistics** capability. The IfAdvanced Node provides an additional exit 
+
+````
+		{
+			allTrue(boolean): Are all true?,
+			allFalse (boolean): Are all false?,
+			trueCount: How many turned out to be true?,
+			falseCount: How many turned out to be false?
+		};
+````
+
+
+### Filter Advanced
+
+The logic equals the one of the standard Filter-Node; see [the official documentation](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.filter).
+
+The _advanced_ part is the **Statistics** capability. The FilterAdvanced Node provides an additional exit 
+
+````
+{
+	dropAll(boolean):Were all data filtered out?
+	keepAll(boolean): Did the filter match all the data?
+	kept: How many items were kept?
+	dropped: How many items were dropped?
+};
+````
+
+
+
+### Any 
+
+The logic equals the one of the standard Filter-Node; see [the official documentation](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.filter).
+
+Different from the Filter or Filter Advanced node, you can return all data in case of any match or just the first match. Additionally, there is a NONE-Exit that is only filled (with all entries) if no item was found that matches the filter. 
+
+````
+{
+	dropAll(boolean):Were all data filtered out?
+	keepAll(boolean): Did the filter match all the data?
+	kept: How many items were kept?
+	dropped: How many items were dropped?
+};
+````
+
+
+
+## Resources
+
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)

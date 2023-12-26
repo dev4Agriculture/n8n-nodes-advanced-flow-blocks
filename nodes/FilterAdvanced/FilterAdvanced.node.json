@@ -1,0 +1,19 @@
+{
+	"node": "n8n-nodes-base.filter-advanced",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"details": "The advanced Filter node can be used to filter items based on a condition. If the condition is met, the item will be passed on to the next node. If the condition is not met, the item will be omited. Otherwise it goes to the dropped-branch. If no match accours, the no-match-path is continued once",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.filter/"
+			}
+		],
+		"generic": []
+	},
+	"alias": ["Router", "Filter", "Condition", "Logic", "Boolean", "Branch"],
+	"subcategories": {
+		"Core Nodes": ["Flow", "Data Transformation"]
+	}
+}

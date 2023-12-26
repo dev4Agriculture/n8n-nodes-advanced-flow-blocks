@@ -1,41 +1,46 @@
 {
-  "name": "n8n-nodes-<...>",
-  "version": "0.1.0",
-  "description": "",
+  "name": "n8n-nodes-advanced",
+  "version": "0.8.0",
+  "description": "Add some advanced notes for flow conditions like Any or an additional Statistics exit",
   "keywords": [
+    "dev4Agriculture",
+    "any",
+    "advanced",
+    "filter",
+    "none",
+    "statistics",
+    "all",
+    "match",
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://www.dev4Agriculture.de",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Frank Wiebeler, dev4Agriculture",
+    "email": "info@dev4Agriculture.de"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/dev4Agriculture/n8n-advanced-flow-nodes.git"
   },
   "main": "index.js",
   "scripts": {
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "lint": "eslint nodes package.json",
+    "lintfix": "eslint nodes package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes package.json"
   },
   "files": [
     "dist"
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-    "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
-    ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/Any/Any.node.js",
+      "dist/nodes/FilterAdvanced/FilterAdvanced.node.js",
+      "dist/nodes/IfAdvanced/IfAdvanced.node.js"
     ]
   },
   "devDependencies": {
@@ -48,5 +53,9 @@
     "n8n-workflow": "*",
     "prettier": "^2.7.1",
     "typescript": "~4.8.4"
+  },
+  "dependencies": {
+    "bgr-apis": "^0.2.0",
+    "ktbl-apis": "^1.1.2"
   }
 }
