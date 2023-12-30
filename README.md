@@ -95,7 +95,11 @@ Different from the Filter or Filter Advanced node, you can return all data in ca
 };
 ````
 
+### For Loop
 
+The For-Loop can be used to iterate over a specific workflow multiple times.
+
+![ForLoop](./data/example_for.png)
 
 ## Resources
 
