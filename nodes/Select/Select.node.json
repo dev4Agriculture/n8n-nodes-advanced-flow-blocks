@@ -1,0 +1,19 @@
+{
+	"node": "n8n-nodes-base.select",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"details": "The SELECT-Node can be used to make a previous nodes result the current result",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.if/"
+			}
+		],
+		"generic": []
+	},
+	"alias": ["Router", "Filter", "Condition", "Logic", "Boolean", "Branch"],
+	"subcategories": {
+		"Core Nodes": ["Flow"]
+	}
+}
