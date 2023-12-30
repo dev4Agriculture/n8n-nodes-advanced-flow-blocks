@@ -13,7 +13,7 @@ export class IfAdvanced implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'IFAdvanced',
 		name: 'ifadvanced',
-		icon: 'file:ifadvanced.svg',
+		icon: 'file:Ifadvanced.svg',
 		group: ['transform'],
 		version: 1,
 		description:
