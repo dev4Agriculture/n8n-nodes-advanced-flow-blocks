@@ -57,8 +57,14 @@ export class For implements INodeType {
 				description: 'Whether the initial input shall be used within the loop?',
 				default: true,
 			},
-
-
+			{
+				displayName: 'OverrideCounter',
+				name: 'overrideCounter',
+				placeholder:'false',
+				type: 'boolean',
+				description: 'Whether the counter shall be overwritten by incoming data',
+				default:true
+			},
 		],
 	};
 
@@ -68,10 +74,11 @@ export class For implements INodeType {
 
 
 
-		const startValue = this.getNodeParameter("startValue",0) as number;
-		const endValue = this.getNodeParameter("endValue",0) as number;
-		const stepValue = this.getNodeParameter("stepValue",0) as number;
-		const useInput =  this.getNodeParameter("useInput",0) as boolean;
+		let startValue = this.getNodeParameter("startValue",0) as number;
+		let endValue = this.getNodeParameter("endValue",0) as number;
+		let stepValue = this.getNodeParameter("stepValue",0) as number;
+		let useInput =  this.getNodeParameter("useInput",0) as boolean;
+		let override = this.getNodeParameter("overrideCounter",0) as boolean;
 
 		let data = this.getInputData(0);
 		let counter = this.getInputData(1);
@@ -90,19 +97,31 @@ export class For implements INodeType {
 			nodeContext.runIndex ++;
 		}
 
+		if(nodeContext.currentValue === undefined){
+			nodeContext.currentValue = startValue - stepValue;
+		}
+
 		for(let  entry of data){
 			returnData.push(entry);
 		}
 
-		let currentValue = startValue - stepValue;
+		let currentValue = nodeContext.currentValue;
 		if((counter != null) && (counter.length == 1)){
-			currentValue = counter[0].json.counter as number;
+			if(override == true){
+				currentValue = counter[0].json["counter"] as number;
+				stepValue = counter[0].json["stepValue"] as number;
+				endValue = counter[0].json["endValue"] as number;
+			}
 		}
 
 		currentValue += stepValue;
+		nodeContext.currentValue = currentValue;
 		returnCounter.push({json:{
 			counter: currentValue,
-			index: nodeContext.runIndex
+			start: startValue,
+			step: stepValue,
+			end: endValue,
+			runIndex: nodeContext.runIndex,
 		}})
 
 		if( (stepValue > 0 && currentValue >= endValue) ||

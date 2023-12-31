@@ -23,22 +23,11 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-### If Advanced
+* [Any](./docs/any.md)
+* [FilterAdvanced](./docs/filterAdvanced.md)
+* [IfAdvanced](./docs/ifAdvanced.md)
+* [Paging](./docs/paging.md)
 
-The If Advanced node equals the If Node of the default n8n package (as of version 1.20.0), but it provides an additional node exit to read statistics.
-
-
-
-### Filter Advanced
-
-The Filter Advanced node equals the Filter Node of the default n8n package (as of version 1.20.0), but it provides an additional node exit to read statistics.
-
-
-### Any 
-
-The Any-Node can be used to check if there is any match within all entries. Other than the filter node or filter advanced node, the None-Exit is only filled, if there is no match at all. 
-
-In case of any match you can decide if you want to receive all entries, just those that match the filter or just the first that matches the filter.
 
 
 ## Compatibility

@@ -1,0 +1,19 @@
+{
+	"node": "n8n-nodes-advanced.logger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"details": "Print a LogOutput either in the Logs or the Developer Tools Console",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/docs/logger.md"
+			}
+		],
+		"generic": []
+	},
+	"alias": ["Print", "Log", "Debug", "Output", "Popup", "Info"],
+	"subcategories": {
+		"Core Nodes": ["Helper"]
+	}
+}
