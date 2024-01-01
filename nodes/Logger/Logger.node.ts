@@ -25,6 +25,26 @@ export class Logger implements INodeType {
 		outputs: ['main'],
 		properties: [
 			{
+				displayName: 'PrintTarget',
+				name: 'target',
+				type: 'options',
+				options: [
+					{
+						name: "UIOnly",
+						value: "frontend"
+					},
+					{
+						name: "ServerOnly",
+						value: "backend"
+					},
+					{
+						name: "Both",
+						value: "both"
+					},
+				],
+				default: 'both'
+			},
+			{
 				displayName: 'Print DateTime',
 				name: 'dateTime',
 				placeholder: 'true',
@@ -33,11 +53,11 @@ export class Logger implements INodeType {
 				default: true,
 			},
 			{
-				displayName: 'Print NodeName',
-				name: 'nodeName',
+				displayName: 'Print Entries Count',
+				name: 'nodeCount',
 				placeholder: 'true',
 				type: 'boolean',
-				description: 'Whether the node name shall be logged',
+				description: 'Whether the number of entries shall be logged',
 				default: true,
 			},
 			{
@@ -49,8 +69,20 @@ export class Logger implements INodeType {
 				default: "",
 			},
 			{
+				displayName: 'Output Data',
+				name: 'outputData',
+				type: 'boolean',
+				default: true
+			},
+			{
 				displayName: 'Output Type',
 				name: 'outputType',
+				displayOptions:
+				{
+					show: {
+						outputData: [true]
+					}
+				},
 				placeholder: 'select',
 				type: 'options',
 				description: 'How Data shall be provided',
@@ -97,19 +129,11 @@ export class Logger implements INodeType {
 
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+		const target = this.getNodeParameter("target",0) as string;
 		const printDateTime = this.getNodeParameter("dateTime",0) as boolean;
-		const printNodeName = this.getNodeParameter("nodeName",0) as number;
+		const printNodeCount = this.getNodeParameter("nodeCount",0) as number;
 		const description = this.getNodeParameter('description',0) as string;
-		const type = this.getNodeParameter("outputType",0) as string;
-
-		let metaDataJSON = false;
-		let fillWithSpaces = false;
-
-		if(type === 'json'){
-			metaDataJSON = this.getNodeParameter("metaDataJSON",0) as boolean;
-		} else {
-			fillWithSpaces = this.getNodeParameter("fillSpaces",0) as boolean;
-		}
+		const outputData = this.getNodeParameter('outputData',0) as boolean;
 
 
 		let data = this.getInputData();
@@ -120,30 +144,47 @@ export class Logger implements INodeType {
 			text += new Date().toLocaleString() + " : \n";
 		}
 
-		if( printNodeName){
-			text += this.getNode().name + " : \n";
+		if( printNodeCount){
+			text += "Count: " + data.length + " : \n";
 		}
 
 		if( description !== undefined){
 			text += "Description: " + description +"\n";
 		}
 
-		if( type === "json"){
-			text += "[\n";
-			for( var entry of data){
-				if(metaDataJSON){
-					text += JSON.stringify(entry) + ",\n";
-				} else {
-					text += JSON.stringify(entry.json) + ",\n";
-				}
-			}
-			text += "]";
-		} else {
-			text += TableBuilder.ArrayToTable(data, fillWithSpaces);
-		}
-		this.sendMessageToUI(text);
-		console.log(text);
+		if( outputData){
+			const type = this.getNodeParameter("outputType",0) as string;
 
+			let metaDataJSON = false;
+			let fillWithSpaces = false;
+
+			if(type === 'json'){
+				metaDataJSON = this.getNodeParameter("metaDataJSON",0) as boolean;
+			} else {
+				fillWithSpaces = this.getNodeParameter("fillSpaces",0) as boolean;
+			}
+
+			if( type === "json"){
+				text += "[\n";
+				for( var entry of data){
+					if(metaDataJSON){
+						text += JSON.stringify(entry) + ",\n";
+					} else {
+						text += JSON.stringify(entry.json) + ",\n";
+					}
+				}
+				text += "]";
+			} else {
+				text += TableBuilder.ArrayToTable(data, fillWithSpaces);
+			}
+		}
+
+		if(target === "frontend" || target === "both"){
+			this.sendMessageToUI(text);
+		}
+		if(target === "backend" || target === "both"){
+			console.log(text);
+		}
 		return [data];
 	}
 

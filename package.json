@@ -40,7 +40,10 @@
     "nodes": [
       "dist/nodes/Any/Any.node.js",
       "dist/nodes/FilterAdvanced/FilterAdvanced.node.js",
-      "dist/nodes/IfAdvanced/IfAdvanced.node.js"
+      "dist/nodes/IfAdvanced/IfAdvanced.node.js",
+      "dist/nodes/ForLoop/ForLoop.node.js",
+      "dist/nodes/Paging/Paging.node.js",
+      "dist/nodes/Logger/Logger.node.js"
     ]
   },
   "devDependencies": {
