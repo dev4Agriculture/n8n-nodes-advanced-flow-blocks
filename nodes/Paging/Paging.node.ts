@@ -55,7 +55,7 @@ export class Paging implements INodeType {
 				type: 'options',
 				options: [
 					{
-						name: "All collected",
+						name: 'All Collected',
 						value:"all"
 					},
 					{
