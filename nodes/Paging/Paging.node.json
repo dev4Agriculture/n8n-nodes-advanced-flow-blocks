@@ -7,7 +7,7 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/docs/paging.md"
+				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/blob/master/docs/paging.md"
 			}
 		],
 		"generic": []

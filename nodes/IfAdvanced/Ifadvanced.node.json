@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.if-advanced",
+	"node": "n8n-nodes-advanced-flow.if-advanced",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "The advanced IF node can be used to implement binary conditional logic in your workflow. You can set up one-to-many conditions to evaluate each item of data being inputted into the node. That data will either evaluate to TRUE or FALSE and route out of the node accordingly.\n\nThis node has multiple types of conditions: Bool, String, Number, and Date & Time.\\n An additional \"Statistics\" exit can be used to provide statistical info or handle a \"If none\" case",
@@ -7,7 +7,7 @@
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.if/"
+				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/blob/master/docs/ifAdvanced.md"
 			}
 		],
 		"generic": []

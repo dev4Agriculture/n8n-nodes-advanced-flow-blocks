@@ -25,70 +25,15 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 * [Any](./docs/any.md)
 * [FilterAdvanced](./docs/filterAdvanced.md)
+* [For](./docs/for.md)
 * [IfAdvanced](./docs/ifAdvanced.md)
 * [Paging](./docs/paging.md)
-
-
+* [Logger](./docs/logger.md)
+* [SizeCheck](./docs/sizeCheck.md)
 
 ## Compatibility
 
 This node was built for n8n version 1.20.0.
-
-## Usage
-
-### If Advanced
-
-The logic equals the one of the standard IF-Node; see [the official documentation](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.if/#branch-execution-with-if-and-merge-nodes).
-
-The _advanced_ part is the **Statistics** capability. The IfAdvanced Node provides an additional exit 
-
-````
-		{
-			allTrue(boolean): Are all true?,
-			allFalse (boolean): Are all false?,
-			trueCount: How many turned out to be true?,
-			falseCount: How many turned out to be false?
-		};
-````
-
-
-### Filter Advanced
-
-The logic equals the one of the standard Filter-Node; see [the official documentation](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.filter).
-
-The _advanced_ part is the **Statistics** capability. The FilterAdvanced Node provides an additional exit 
-
-````
-{
-	dropAll(boolean):Were all data filtered out?
-	keepAll(boolean): Did the filter match all the data?
-	kept: How many items were kept?
-	dropped: How many items were dropped?
-};
-````
-
-
-
-### Any 
-
-The logic equals the one of the standard Filter-Node; see [the official documentation](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.filter).
-
-Different from the Filter or Filter Advanced node, you can return all data in case of any match or just the first match. Additionally, there is a NONE-Exit that is only filled (with all entries) if no item was found that matches the filter. 
-
-````
-{
-	dropAll(boolean):Were all data filtered out?
-	keepAll(boolean): Did the filter match all the data?
-	kept: How many items were kept?
-	dropped: How many items were dropped?
-};
-````
-
-### For Loop
-
-The For-Loop can be used to iterate over a specific workflow multiple times.
-
-![ForLoop](./data/example_for.png)
 
 ## Resources
 

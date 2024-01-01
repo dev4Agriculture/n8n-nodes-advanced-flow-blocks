@@ -1,4 +1,5 @@
 import {
+	sleep,
 	type IExecuteFunctions,
 	type INodeExecutionData,
 	type INodeType,
@@ -60,11 +61,25 @@ export class For implements INodeType {
 			{
 				displayName: 'OverrideCounter',
 				name: 'overrideCounter',
-				placeholder:'false',
+				placeholder:'true',
 				type: 'boolean',
 				description: 'Whether the counter shall be overwritten by incoming data',
 				default:true
 			},
+			{
+				displayName: "Info! The For-Loop includes a certain risk to block the server for a long while. To avoid this, we have a safety switch for an execution time of maximum 1000 runs/ 2 minutes. Please only deactivate this switch if you're really sure you know what you're doing and if you have access to your backend to restart it!",
+				name: "info",
+				type: "notice",
+				default:""
+			},
+			{
+				displayName: 'SafetySwitch',
+				name: 'safetySwitch',
+				placeholder:'true',
+				type: 'boolean',
+				description: 'Whether the endless-loop-prevention shall be active, attention: Only deactivate this if you are sure you know what you are doing!',
+				default:true,
+			}
 		],
 	};
 
@@ -79,12 +94,14 @@ export class For implements INodeType {
 		let stepValue = this.getNodeParameter("stepValue",0) as number;
 		let useInput =  this.getNodeParameter("useInput",0) as boolean;
 		let override = this.getNodeParameter("overrideCounter",0) as boolean;
+		let safetySwitch = this.getNodeParameter("safetySwitch",0) as boolean;
 
 		let data = this.getInputData(0);
 		let counter = this.getInputData(1);
 
 		const nodeContext = this.getContext('node');
 		if(nodeContext.runIndex === undefined){
+			nodeContext.startTime = new Date().getTime();
 			nodeContext.runIndex = 0;
 			if( !useInput){
 				data = [{json:{counter:1}}];
@@ -95,6 +112,17 @@ export class For implements INodeType {
 			}
 		} else {
 			nodeContext.runIndex ++;
+			if( safetySwitch == true){
+				if(
+					( nodeContext.runIndex > 1000)||
+					( (new Date().getTime() - nodeContext.startTime) > 120000)
+				){
+						return [[],[],[]]
+				}
+				if( nodeContext.runIndex % 100 == 0){
+					sleep(400);
+				}
+			}
 		}
 
 		if(nodeContext.currentValue === undefined){
