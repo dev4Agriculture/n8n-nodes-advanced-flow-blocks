@@ -1,0 +1,19 @@
+{
+	"node": "n8n-nodes-advanced.paging",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"details": "A surrounding loop node to collect messages from a Request that requires Paging",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/docs/paging.md"
+			}
+		],
+		"generic": []
+	},
+	"alias": ["Router", "Filter", "Condition", "Logic", "Boolean", "Branch"],
+	"subcategories": {
+		"Core Nodes": ["Flow"]
+	}
+}
