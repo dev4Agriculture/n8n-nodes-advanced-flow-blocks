@@ -1,0 +1,19 @@
+{
+	"node": "n8n-nodes-advanced-flow.sizeCheck",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"details": "Check if the current amount of entries in the list exceed a certain amount",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/blob/master/docs/sizecheck.md"
+			}
+		],
+		"generic": []
+	},
+	"alias": ["Router", "Filter", "Condition", "Logic", "Boolean", "Branch","Count"],
+	"subcategories": {
+		"Core Nodes": ["Flow"]
+	}
+}

@@ -13,7 +13,7 @@ export class Any implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Any',
 		name: 'any',
-		icon: 'file:question_mark.svg',
+		icon: 'file:any.svg',
 		group: ['route'],
 		version: 1,
 		description:

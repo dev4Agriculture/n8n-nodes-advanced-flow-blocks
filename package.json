@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-advanced-flow",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Add some advanced notes for flow conditions like Any or an additional Statistics exit",
   "keywords": [
     "dev4Agriculture",
@@ -40,7 +40,14 @@
     "nodes": [
       "dist/nodes/Any/Any.node.js",
       "dist/nodes/FilterAdvanced/FilterAdvanced.node.js",
-      "dist/nodes/IfAdvanced/IfAdvanced.node.js"
+      "dist/nodes/IfAdvanced/IfAdvanced.node.js",
+      "dist/nodes/ForLoop/ForLoop.node.js",
+      "dist/nodes/Paging/Paging.node.js",
+      "dist/nodes/Logger/Logger.node.js",
+      "dist/nodes/SizeCheck/SizeCheck.node.js",
+      "dist/nodes/ShelfPush/ShelfPush.node.js",
+      "dist/nodes/ShelfPop/ShelfPop.node.js",
+      "dist/nodes/Generator/Generator.node.js"
     ]
   },
   "devDependencies": {
@@ -50,12 +57,10 @@
     "eslint-plugin-n8n-nodes-base": "^1.11.0",
     "gulp": "^4.0.2",
     "n8n-core": "*",
-    "n8n-workflow": "*",
+    "n8n-workflow": "1.14.1",
     "prettier": "^2.7.1",
     "typescript": "~4.8.4"
   },
   "dependencies": {
-    "bgr-apis": "^0.2.0",
-    "ktbl-apis": "^1.1.2"
   }
 }
