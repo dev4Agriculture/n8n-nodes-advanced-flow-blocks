@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-advanced-flow",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Add some advanced notes for flow conditions like Any or an additional Statistics exit",
   "keywords": [
     "dev4Agriculture",
