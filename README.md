@@ -30,6 +30,8 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 * [Paging](./docs/paging.md)
 * [Logger](./docs/logger.md)
 * [SizeCheck](./docs/sizeCheck.md)
+* [Shelf](./docs/shelf.md)
+* [Generator](./docs/generator.md)
 
 ## Compatibility
 

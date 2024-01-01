@@ -1,13 +1,13 @@
 {
-	"node": "n8n-nodes-advanced-flow.paging",
+	"node": "n8n-nodes-advanced.shelf-push",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"details": "A surrounding loop node to collect messages from a Request that requires Paging",
+	"details": "Push the input to the shelf",
 	"categories": ["Core Nodes"],
 	"resources": {
 		"primaryDocumentation": [
 			{
-				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/blob/master/docs/paging.md"
+				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/blob/master/docs/shelf-push.md"
 			}
 		],
 		"generic": []

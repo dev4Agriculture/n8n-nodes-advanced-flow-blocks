@@ -44,7 +44,10 @@
       "dist/nodes/ForLoop/ForLoop.node.js",
       "dist/nodes/Paging/Paging.node.js",
       "dist/nodes/Logger/Logger.node.js",
-      "dist/nodes/SizeCheck/SizeCheck.node.js"
+      "dist/nodes/SizeCheck/SizeCheck.node.js",
+      "dist/nodes/ShelfPush/ShelfPush.node.js",
+      "dist/nodes/ShelfPop/ShelfPop.node.js",
+      "dist/nodes/Generator/Generator.node.js"
     ]
   },
   "devDependencies": {
@@ -59,7 +62,5 @@
     "typescript": "~4.8.4"
   },
   "dependencies": {
-    "bgr-apis": "^0.2.0",
-    "ktbl-apis": "^1.1.2"
   }
 }

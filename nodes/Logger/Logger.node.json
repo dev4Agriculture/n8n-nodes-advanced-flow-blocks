@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-advanced.logger",
+	"node": "n8n-nodes-advanced-flow.logger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "Print a LogOutput either in the Logs or the Developer Tools Console",

@@ -1,0 +1,19 @@
+{
+	"node": "n8n-nodes-advanced-flow.generator",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"details": "Generate Elements",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/dev4Agriculture/n8n-nodes-advanced-flow-blocks/blob/master/docs/generator.md"
+			}
+		],
+		"generic": []
+	},
+	"alias": ["Generate", "Create", "Build", "Single", "Entry", "Info"],
+	"subcategories": {
+		"Core Nodes": ["Helper"]
+	}
+}
