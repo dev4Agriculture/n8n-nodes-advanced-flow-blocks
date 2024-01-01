@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-advanced-flow.sizeCheck",
+	"node": "n8n-nodes-advanced-flow.Sizecheck",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "Check if the current amount of entries in the list exceed a certain amount",
