@@ -101,9 +101,7 @@ export class Paging implements INodeType {
 				(Object.keys(data[0].json).length == 0)
 			)
 		){
-			if(nodeContext.data===undefined){
-				return [[],[]];
-			} else {
+			if(nodeContext.data!==undefined){
 				for(let entry of nodeContext.data){
 					returnData.push(entry);
 				}

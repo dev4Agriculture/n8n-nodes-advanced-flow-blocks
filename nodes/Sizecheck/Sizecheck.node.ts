@@ -29,6 +29,13 @@ export class Sizecheck implements INodeType {
 					type: 'number',
 					description: 'The value to compare the list size to',
 					default: 100,
+				},
+				{
+					displayName:'CountEmptyNodes',
+					name: 'empty',
+					type: 'boolean',
+					description: 'Whether empty entries - data without JSON keys - shall be ignored',
+					default: true
 				}
 			],
 	};
@@ -36,12 +43,18 @@ export class Sizecheck implements INodeType {
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const returnData: INodeExecutionData[] = [];
 		const items = this.getInputData();
+		const ignoreEmpty = this.getNodeParameter("empty",0) as boolean;
+		let size = 0;
+
 		for(var entry of items){
 			returnData.push(entry);
+			if( ignoreEmpty == false || Object.keys(entry.json).length > 0){
+				size++;
+			}
 		}
 		var compare = this.getNodeParameter("threshold",0) as number;
 
-		if(returnData.length < compare){
+		if(size < compare){
 			return [returnData,[],[]];
 		} else if (returnData.length == compare){
 			return [[],returnData,[]];
