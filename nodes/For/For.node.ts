@@ -59,14 +59,6 @@ export class For implements INodeType {
 				default: true,
 			},
 			{
-				displayName: 'OverrideCounter',
-				name: 'overrideCounter',
-				placeholder:'true',
-				type: 'boolean',
-				description: 'Whether the counter shall be overwritten by incoming data',
-				default:true
-			},
-			{
 				displayName: "Info! The For-Loop includes a certain risk to block the server for a long while. To avoid this, we have a safety switch for an execution time of maximum 1000 runs/ 2 minutes. Please only deactivate this switch if you're really sure you know what you're doing and if you have access to your backend to restart it!",
 				name: "info",
 				type: "notice",
@@ -93,11 +85,9 @@ export class For implements INodeType {
 		let endValue = this.getNodeParameter("endValue",0) as number;
 		let stepValue = this.getNodeParameter("stepValue",0) as number;
 		let useInput =  this.getNodeParameter("useInput",0) as boolean;
-		let override = this.getNodeParameter("overrideCounter",0) as boolean;
 		let safetySwitch = this.getNodeParameter("safetySwitch",0) as boolean;
 
 		let data = this.getInputData(0);
-		let counter = this.getInputData(1);
 
 		const nodeContext = this.getContext('node');
 		if(nodeContext.runIndex === undefined){
@@ -134,13 +124,6 @@ export class For implements INodeType {
 		}
 
 		let currentValue = nodeContext.currentValue;
-		if((counter != null) && (counter.length == 1)){
-			if(override == true){
-				currentValue = counter[0].json["counter"] as number;
-				stepValue = counter[0].json["stepValue"] as number;
-				endValue = counter[0].json["endValue"] as number;
-			}
-		}
 
 		currentValue += stepValue;
 		nodeContext.currentValue = currentValue;
