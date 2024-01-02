@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-advanced-flow",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "description": "Add some advanced notes for flow conditions like Any or an additional Statistics exit",
   "keywords": [
     "dev4Agriculture",
@@ -47,7 +47,7 @@
       "dist/nodes/Paging/Paging.node.js",
       "dist/nodes/ShelfPush/ShelfPush.node.js",
       "dist/nodes/ShelfPop/ShelfPop.node.js",
-      "dist/nodes/SizeCheck/Sizecheck.node.js"
+      "dist/nodes/Sizecheck/Sizecheck.node.js"
     ]
   },
   "devDependencies": {
