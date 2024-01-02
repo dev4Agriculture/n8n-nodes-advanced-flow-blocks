@@ -9,7 +9,7 @@ export class Paging implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Paging',
 		name: 'paging',
-		icon: 'file:paging.svg',
+		icon: 'file:Paging.svg',
 		group: ['route'],
 		version: [1, 2, 2.1, 2.2, 2.3],
 		description:

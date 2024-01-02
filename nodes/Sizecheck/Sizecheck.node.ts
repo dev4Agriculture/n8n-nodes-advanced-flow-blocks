@@ -9,7 +9,7 @@ export class Sizecheck implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Sizecheck',
 		name: 'sizecheck',
-		icon: 'file:SizeCheck.svg',
+		icon: 'file:Sizecheck.svg',
 		group: ['flow'],
 		version: 1,
 		description:

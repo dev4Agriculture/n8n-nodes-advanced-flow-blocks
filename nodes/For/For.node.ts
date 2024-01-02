@@ -10,7 +10,7 @@ export class For implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'For',
 		name: 'for',
-		icon: 'file:for.svg',
+		icon: 'file:For.svg',
 		group: ['route'],
 		version: [1, 2, 2.1, 2.2, 2.3],
 		description:

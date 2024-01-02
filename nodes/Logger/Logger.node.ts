@@ -11,7 +11,7 @@ export class Logger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Logger',
 		name: 'logger',
-		icon: 'file:logger.svg',
+		icon: 'file:Logger.svg',
 		group: ['helpers'],
 		version: [1, 2, 2.1, 2.2, 2.3],
 		description:

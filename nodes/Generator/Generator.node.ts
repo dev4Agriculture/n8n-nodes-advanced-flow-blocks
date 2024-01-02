@@ -10,7 +10,7 @@ export class Generator implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Generator',
 		name: 'generator',
-		icon: 'file:generator.svg',
+		icon: 'file:Generator.svg',
 		group: ['helpers'],
 		version: [1, 2, 2.1, 2.2, 2.3],
 		description:
