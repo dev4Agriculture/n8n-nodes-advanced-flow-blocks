@@ -81,6 +81,7 @@ export class Paging implements INodeType {
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const returnCounter: INodeExecutionData[] = [];
+		const returnData: INodeExecutionData[] = [];
 
 
 
@@ -103,7 +104,10 @@ export class Paging implements INodeType {
 			if(nodeContext.data===undefined){
 				return [[],[]];
 			} else {
-				return [nodeContext.data,[]];
+				for(let entry of nodeContext.data){
+					returnData.push(entry);
+				}
+				return [returnData,[]];
 			}
 		}
 
