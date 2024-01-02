@@ -5,7 +5,7 @@ import type {
 	INodeTypeDescription,
 } from 'n8n-workflow';
 
-export class SizeCheck implements INodeType {
+export class Sizecheck implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'SizeCheck',
 		name: 'sizecheck',
