@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-advanced.paging",
+	"node": "n8n-nodes-advanced.shelf-pop",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"details": "A surrounding loop node to collect messages from a Request that requires Paging",
@@ -12,7 +12,7 @@
 		],
 		"generic": []
 	},
-	"alias": ["Router", "Filter", "Condition", "Logic", "Boolean", "Branch"],
+	"alias": ["Shelf","Push","Storage", "Branch"],
 	"subcategories": {
 		"Core Nodes": ["Flow"]
 	}
