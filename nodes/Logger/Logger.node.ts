@@ -53,11 +53,11 @@ export class Logger implements INodeType {
 				default: true,
 			},
 			{
-				displayName: 'Print Entries Count',
+				displayName: 'Print Items Count',
 				name: 'nodeCount',
 				placeholder: 'true',
 				type: 'boolean',
-				description: 'Whether the number of entries shall be logged',
+				description: 'Whether the number of items shall be logged',
 				default: true,
 			},
 			{

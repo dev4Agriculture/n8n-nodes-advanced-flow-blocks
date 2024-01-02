@@ -5,20 +5,33 @@
 
 The SizeCheck Node checks if the size of the input list is less, equal or more than a given number
 
+## Parameters
+
+### Threshold
+
+The threshold that defines the True/False Result
+
+### CountEmptyItems
+
+Shall those Items be counted that do not include any keys?
+
+> **Hint**: This can be used to check if the last node exported an empty result.
+
+## Input
+
+The list that shall be checked
+
+## Output
+
+The input List to the correct output, depending on the comparison result.
+
+
 
 ## Example
 
 ![Example for SizeCheck](./data/examples/sizecheck.png)
 
 In this example, some data is generated in the Code Node. Depending on the Result for the SizeCheck, different Logs are triggered
-
-## Input
-
-Any List
-
-## Output
-
-The input List to the correct output, depending on the comparison result
 
 
 ## Example Scenarios

@@ -161,7 +161,8 @@ export class Paging implements INodeType {
 				runIndex: nodeContext.runIndex,
 				index : nodeContext.index,
 				maxAmount : maxAmount,
-				count : nodeContext.data.length
+				count : nodeContext.data.length,
+				steps: stepValue
 			}
 		}
 		returnCounter.push(entry);
