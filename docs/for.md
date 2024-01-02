@@ -1,10 +1,33 @@
 # For 
-
-![logo](data/for.svg)
+<img src="./data/logos/for.svg" alt="image" width="100" height="auto">
 
 The For-Loop-Node runs a certain workflow multiple times. 
 
 During the loop, it outputs the incoming data _dataIn_ to _dataOut_ and additionally a counter Object.
+
+## Parameters
+
+The FOR-Node provides several parameters:
+
+### Start Value
+
+The first value that shall be output
+
+### Step Value
+
+The value by which the counter shall be increased (or decreased!) on every run
+
+### End Value
+
+The value that needs to be met or crossed to stop the ForLoop
+
+### Override Counter
+
+If this switch is activated, the values for Step, CurrentValue and EndValue are read from the CounterIn Input. By this you gain all flexibility to adjust the ForLoop on the run
+
+### Safety Switch
+
+The safety switch shall avoid neverending loops **Always always ALWAYS** start your development with this switch being activated. Only deactivate it, if you're really sure you need it. This switch saves you from restarting your whole instance!
 
 ## Input
 

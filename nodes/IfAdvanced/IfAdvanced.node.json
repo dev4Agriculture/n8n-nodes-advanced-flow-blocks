@@ -12,7 +12,7 @@
 		],
 		"generic": []
 	},
-	"alias": ["Router", "Filter", "Condition", "Logic", "Boolean", "Branch"],
+	"alias": ["Router", "If","Filter", "Condition", "Logic", "Boolean", "Branch"],
 	"subcategories": {
 		"Core Nodes": ["Flow"]
 	}

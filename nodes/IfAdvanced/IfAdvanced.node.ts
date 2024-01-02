@@ -12,8 +12,8 @@ import { NodeOperationError } from 'n8n-workflow';
 export class IfAdvanced implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'IFAdvanced',
-		name: 'ifadvanced',
-		icon: 'file:Ifadvanced.svg',
+		name: 'ifAdvanced',
+		icon: 'file:IfAdvanced.svg',
 		group: ['transform'],
 		version: 1,
 		description:

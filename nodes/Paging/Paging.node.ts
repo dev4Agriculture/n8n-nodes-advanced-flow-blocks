@@ -9,7 +9,7 @@ export class Paging implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Paging',
 		name: 'paging',
-		icon: 'file:paging.svg',
+		icon: 'file:Paging.svg',
 		group: ['route'],
 		version: [1, 2, 2.1, 2.2, 2.3],
 		description:
@@ -55,7 +55,7 @@ export class Paging implements INodeType {
 				type: 'options',
 				options: [
 					{
-						name: "All collected",
+						name: 'All Collected',
 						value:"all"
 					},
 					{
@@ -81,6 +81,7 @@ export class Paging implements INodeType {
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const returnCounter: INodeExecutionData[] = [];
+		const returnData: INodeExecutionData[] = [];
 
 
 
@@ -100,10 +101,11 @@ export class Paging implements INodeType {
 				(Object.keys(data[0].json).length == 0)
 			)
 		){
-			if(nodeContext.data===undefined){
-				return [[],[]];
-			} else {
-				return [nodeContext.data,[]];
+			if(nodeContext.data!==undefined){
+				for(let entry of nodeContext.data){
+					returnData.push(entry);
+				}
+				return [returnData,[]];
 			}
 		}
 
@@ -159,7 +161,8 @@ export class Paging implements INodeType {
 				runIndex: nodeContext.runIndex,
 				index : nodeContext.index,
 				maxAmount : maxAmount,
-				count : nodeContext.data.length
+				count : nodeContext.data.length,
+				steps: stepValue
 			}
 		}
 		returnCounter.push(entry);

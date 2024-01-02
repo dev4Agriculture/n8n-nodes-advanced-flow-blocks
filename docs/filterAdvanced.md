@@ -1,8 +1,12 @@
 # Filter Advanced
-![Logo](./data/logos/FilterAdvanced.svg)
+<img src="data/logos/FilterAdvanced.svg" alt="image" width="100" height="auto">
+
 
 The Filter Advanced node equals the Filter Node of the default n8n package (as of version 1.20.0), but it provides an additional node exit to read statistics.
 
+## Parameters
+
+The Parameters of the Advanced-Filter are equal to those of the n8n Filter Node. See [the n8n official documentation](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.filter/).
 
 ## Input
 
@@ -32,4 +36,4 @@ The statistic branch can be used to read some meta data of the operation. It inc
 
 ## Example
 
-An example use case for this could simply be if you want to handle both results; the matched and the dropped. For example, if an entry in a ToDo Tool can have a done status. If it's not yet "Done", you might want to check for the date in a next step and send a notification when it's outdated. For those that are "done", you might just want to set them to archived.
+An example use case for this could simply be if you want to handle both results; the matched and the dropped. For example, if an item in a ToDo Tool can have a done status. If it's not yet "Done", you might want to check for the date in a next step and send a notification when it's outdated. For those that are "done", you might just want to set them to archived.

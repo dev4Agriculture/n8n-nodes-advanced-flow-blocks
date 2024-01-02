@@ -12,7 +12,7 @@
 		],
 		"generic": []
 	},
-	"alias": ["Generate", "Create", "Build", "Single", "Entry", "Info"],
+	"alias": ["Generate", "Create", "Build", "Single", "Item", "Entry", "Info"],
 	"subcategories": {
 		"Core Nodes": ["Helper"]
 	}
