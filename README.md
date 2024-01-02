@@ -1,13 +1,23 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
-
+![dev4AgLogo](./docs/data/dev4Agriculture.svg)
 # n8n-advanced-flow-nodes
 
-This is an n8n community node. It lets you do some advanced flows. The n8n default provides different flow nodes to switch, if or filter data. These nodes come with 2 disadvantages:
+This is an n8n community node. It lets you do some advanced flows. The n8n default provides different flow nodes to switch, if or filter data. These nodes come with some disadvantages:
 
 1. There is no possibility to get statistics
 2. There is no possibility to check for any/none matches
+3. It's not possible to "Store data for later"
+4. I was missing a possibility to simply log data on the go
+5. I had issues with Paging and a good ForLoop
 
 These advanced flow nodes fix both these issues.
+
+## Who are we?
+
+dev4Agriculture focusses on agricultural software in the B2B area. The n8n nodes in this repository evolved from our own internal automation processes.
+
+## What is n8n
+
+n8n is a low code platform to automate workflows. Find more on https://n8n.io
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
@@ -40,3 +50,8 @@ This node was built for n8n version 1.20.0.
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
+
+
+## Feedback
+
+Your feedback is very welcome, please provide any feedback [here](https://www.dev4agriculture.de/unternehmen/#kontakt) or let's connect on [LinkedIn](https://www.linkedin.com/in/frank-wiebeler/)
