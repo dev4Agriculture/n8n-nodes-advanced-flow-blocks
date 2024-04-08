@@ -12,7 +12,7 @@ export class Generator implements INodeType {
 		name: 'generator',
 		icon: 'file:Generator.svg',
 		group: ['helpers'],
-		version: [1, 2, 2.1, 2.2, 2.3],
+		version: [1, 2, 3],
 		description:
 			'Create Objects',
 		defaults: {

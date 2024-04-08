@@ -11,7 +11,7 @@ export class Paging implements INodeType {
 		name: 'paging',
 		icon: 'file:Paging.svg',
 		group: ['route'],
-		version: [1, 2, 2.1, 2.2, 2.3],
+		version: [1, 2, 3],
 		description:
 			'Paging functionality for APIs surrounding HTTP requests but missing the Paging',
 		defaults: {
