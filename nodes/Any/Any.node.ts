@@ -15,7 +15,7 @@ export class Any implements INodeType {
 		name: 'any',
 		icon: 'file:Any.svg',
 		group: ['route'],
-		version: 1,
+		version: [1,2,3,4],
 		description:
 			'Checks if any element matches and returns the matches. Only if none matches, the "None"-Branch is filled',
 		defaults: {

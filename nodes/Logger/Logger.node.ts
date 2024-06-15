@@ -13,7 +13,7 @@ export class Logger implements INodeType {
 		name: 'logger',
 		icon: 'file:Logger.svg',
 		group: ['helpers'],
-		version: [1, 2, 3],
+		version: [1, 2, 3, 4],
 		description:
 			'Print a LogOutput either in the Logs or the Developer Tools Console',
 		defaults: {

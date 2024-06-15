@@ -15,7 +15,7 @@ export class FilterAdvanced implements INodeType {
 		name: 'filterAdvanced',
 		icon: 'file:FilterAdvanced.svg',
 		group: ['transform'],
-		version: 1,
+		version: [1,2,3,4],
 		description: 'Remove items matching a condition',
 		defaults: {
 			name: 'FilterAdvanced'

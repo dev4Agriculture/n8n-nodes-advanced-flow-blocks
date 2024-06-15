@@ -11,7 +11,7 @@ export class ShelfPush implements INodeType {
 		name: 'shelfPush',
 		icon: 'file:ShelfPush.svg',
 		group: ['route'],
-		version: [1, 2, 3],
+		version: [1, 2, 3, 4],
 		description:
 			'Push the input to the shelf',
 		defaults: {

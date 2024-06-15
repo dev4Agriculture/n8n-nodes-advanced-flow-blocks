@@ -12,7 +12,7 @@ export class For implements INodeType {
 		name: 'for',
 		icon: 'file:For.svg',
 		group: ['route'],
-		version: [1, 2, 3],
+		version: [1, 2, 3, 4],
 		description:
 			'Base for a For-Loop',
 		defaults: {

@@ -11,7 +11,7 @@ export class ShelfPop implements INodeType {
 		name: 'shelfPop',
 		icon: 'file:ShelfPop.svg',
 		group: ['route'],
-		version: [1, 2, 3],
+		version: [1, 2, 3, 4],
 		description:
 			'Pop data off the shelf',
 		defaults: {

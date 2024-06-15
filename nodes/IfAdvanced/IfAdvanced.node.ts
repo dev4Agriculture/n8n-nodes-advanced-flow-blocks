@@ -15,7 +15,7 @@ export class IfAdvanced implements INodeType {
 		name: 'ifAdvanced',
 		icon: 'file:IfAdvanced.svg',
 		group: ['transform'],
-		version: 1,
+		version: [1, 2, 3, 4],
 		description:
 			'Route items to different branches (true/false) and an additional statistics branch',
 		defaults: {

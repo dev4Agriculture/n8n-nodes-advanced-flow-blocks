@@ -11,7 +11,7 @@ export class Sizecheck implements INodeType {
 		name: 'sizecheck',
 		icon: 'file:Sizecheck.svg',
 		group: ['flow'],
-		version: 1,
+		version: [1, 2, 3, 4],
 		description:
 			'Check if the current list exceeds a certain amount of data',
 		defaults: {
