@@ -55,3 +55,11 @@ This node was built for n8n version 1.20.0.
 ## Feedback
 
 Your feedback is very welcome, please provide any feedback [here](https://www.dev4agriculture.de/unternehmen/#kontakt) or let's connect on [LinkedIn](https://www.linkedin.com/in/frank-wiebeler/)
+
+
+## TroubleShooting
+
+### Nodes unknown after updating the version
+
+In older versions of the nodes, we used a Version Number 2.3, which became incompatible in V1.40.1(?) of n8n.
+**WorkAround/Fix:** Download the Flow, replace Version 2.3 with Version 4 and reimport the file.

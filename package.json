@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-advanced-flow",
-  "version": "0.9.17",
+  "version": "0.9.18",
   "description": "This n8n Node adds some advanced nodes for flow conditions like Any or an additional Statistics exit",
   "keywords": [
     "dev4Agriculture",
